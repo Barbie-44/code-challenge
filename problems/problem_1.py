@@ -1,5 +1,7 @@
 class StringFrequency:
     """
+    GOAL:
+        - Calculate the frequency of target str into paragraph str.
     APPROACH:
         - Get the length of the paragraph.
         - Get the length of the target str
@@ -8,26 +10,25 @@ class StringFrequency:
         - Stablish an int variable counter to zero
         - Iterate through the paragraph's subtrings
         - Update the counter each time a subparagraph is equal to target str
-
-
-
     REMARKS:
-        - Text is given, it's an input
-        - You cannot use native functions
-        - Only one target is required
+        - Paragrah text is given.
+        - You cannot use Python native functions.
+        - Only one target is required.
         - You must ALWAYS return an int or f-string: f"{int:result}
-          ocurrencias encontradas"
+          ocurrencias encontradas".
 
-    POSSIBLE CASES:
-        - Target doesn't exists in input
-        - Validate input
+    POSSIBLE TEST CASES:
+        - Target doesn't exists in input.
+        - Validate input.
         - Validate string is not empty (length of string
             is different from zero)
         - Concatenated strings (Ex. logísticadeoperaciones).
         - target length > paragraph length
     """
 
-    def __init__(self, paragraph, target, case_sensitive: bool = True):
+    def __init__(
+        self, paragraph: str, target: str, case_sensitive: bool = True
+    ):
         self.paragraph = paragraph
         self.target = target
 
@@ -45,6 +46,7 @@ class StringFrequency:
         frequency = 0
         start = 0
         while start < num_of_iterations:
+
             current_substr = self.paragraph[start : start + target_length]
             if current_substr == self.target:
                 frequency += 1
@@ -53,13 +55,14 @@ class StringFrequency:
 
 
 paragraph = (
-    "La logística Digital es un concepto que surge de la integración de la "
-    "logística tradicional y la era digital. Con el auge del correo electrónico "
-    "y las descargas digitales reemplazando productos físicos, podríamos estar "
-    "hablando de un golpe devastador para la industria de la logística, pero, "
-    "de hecho, ha ocurrido algo muy diferente. El sector de la logística ha "
-    "introducido las innovaciones digitales."
+    "La logística Digital es un concepto que surge de la integración "
+    "de la logística tradicional y la era digital. Con el auge del correo "
+    "electrónico y las descargas digitales reemplazando productos físicos, "
+    "podríamos estar hablando de un golpe devastador para la industria de la "
+    "logística, pero, de hecho, ha ocurrido algo muy diferente. El sector de "
+    "la logística ha introducido las innovaciones digitales."
 )
+
 target = "logística"
 
 result = StringFrequency(paragraph, target, False)
