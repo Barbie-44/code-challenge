@@ -1,6 +1,5 @@
-from input import data
 from typing import List
-from utils import get_length_of_object
+from problems.utils.operations import get_length_of_object
 
 
 class ArrayProcessor:
@@ -51,10 +50,11 @@ class ArrayProcessor:
         last_items = []
         len_input_array = get_length_of_object(self.input_array)
         for i in range(len_input_array):
+
             curr_item = self.input_array[i]
             satisfies_conditions = self._check_criteria(curr_item)
             if satisfies_conditions:
-                top_items += curr_item
+                top_items.append(curr_item)
                 continue
             last_items.append(curr_item)
         return top_items, last_items
@@ -97,8 +97,5 @@ class ArrayProcessor:
     def get_sorted_array(self):
         top_items, last_items = self.get_items()
         final_result = self.sort_top_items(top_items) + last_items
-        return final_result
-
-
-final_arr = ArrayProcessor(data, [("weight", "=", 3)])
-print(final_arr.get_sorted_array())
+        print(final_result)
+        return

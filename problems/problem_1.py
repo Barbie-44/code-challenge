@@ -1,3 +1,6 @@
+from problems.utils.operations import get_length_of_object
+
+
 class StringFrequency:
     """
     GOAL:
@@ -39,9 +42,9 @@ class StringFrequency:
         return length
 
     def get_string_frequency(self):
-        paragraph_length, target_length = self._get_length_of_str(
+        paragraph_length, target_length = get_length_of_object(
             self.paragraph
-        ), self._get_length_of_str(self.target)
+        ), get_length_of_object(self.target)
         num_of_iterations = paragraph_length - target_length + 1
         frequency = 0
         start = 0
@@ -51,20 +54,4 @@ class StringFrequency:
             if current_substr == self.target:
                 frequency += 1
             start += 1
-        return frequency
-
-
-paragraph = (
-    "La logística Digital es un concepto que surge de la integración "
-    "de la logística tradicional y la era digital. Con el auge del correo "
-    "electrónico y las descargas digitales reemplazando productos físicos, "
-    "podríamos estar hablando de un golpe devastador para la industria de la "
-    "logística, pero, de hecho, ha ocurrido algo muy diferente. El sector de "
-    "la logística ha introducido las innovaciones digitales."
-)
-
-target = "logística"
-
-result = StringFrequency(paragraph, target, False)
-
-print(f"{result.get_string_frequency()} ocurrencias encontradas.")
+        return print(f"{frequency} ocurrencias encontradas.")
