@@ -53,9 +53,7 @@ class TestStringFrequency:
             self.test_empty_paragraph_case()
             self.test_space_str_case()
             self.test_validate_target_type()
-            print("SUCCESS!")
         except Exception as e:
-            print("ERROR: ", e)
             return e
 
 

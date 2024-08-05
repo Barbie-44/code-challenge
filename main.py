@@ -12,12 +12,15 @@ def main():
     problem_num = eval(
         input("Enter a the number of a problem to solve (1 or 2): ")
     )
+    output = None
     if problem_num == 1:
         frequency = StringFrequency(paragraph, target)
-        frequency.get_string_frequency()
+        output = frequency.get_string_frequency()
     if problem_num == 2:
         ordered_array = ArrayProcessor(data, [("weight", "=", 3)])
-        ordered_array.get_sorted_array()
+        output = ordered_array.get_sorted_array()
+    print(output)
+    return output
 
 
 if __name__ == "__main__":

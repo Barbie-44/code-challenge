@@ -30,6 +30,7 @@ class ArrayProcessor:
             "<=": lambda x, y: x <= y,
             ">=": lambda x, y: x >= y,
         }
+        self.valid_criteria = ["width", "height", "lenght", "weight"]
 
     def _check_criteria(self, item):
         satisfies_conditions = True
@@ -41,7 +42,11 @@ class ArrayProcessor:
             param = curr_criteria[0]
             operator = curr_criteria[1]
             expected_value = curr_criteria[2]
-            if not self.operations[operator](item[param], expected_value):
+            if (
+                param not in self.valid_criteria
+                or not self.operations.get(operator)
+                or not self.operations[operator](item[param], expected_value)
+            ):
                 satisfies_conditions = False
         return satisfies_conditions
 
@@ -95,7 +100,8 @@ class ArrayProcessor:
         return arr
 
     def get_sorted_array(self):
+        if not self.criteria:
+            return self.input_array
         top_items, last_items = self.get_items()
         final_result = self.sort_top_items(top_items) + last_items
-        print(final_result)
-        return
+        return final_result
