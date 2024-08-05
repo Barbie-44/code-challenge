@@ -1,5 +1,5 @@
-from typing import List
 from problems.utils.operations import get_length_of_object
+from typing import List
 
 
 class ArrayProcessor:

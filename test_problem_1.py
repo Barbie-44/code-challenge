@@ -7,7 +7,7 @@ import string
 class TestStringFrequency:
     """
     DESCRIPTION:
-        This class contains possible test cases for problem 2.
+        This class contains possible test cases for problem 1.
     REMARKS:
         - Python native functions are used to test the original approach.
     """
