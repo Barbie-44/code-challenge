@@ -7,7 +7,7 @@ from input import data
 def main():
     """
     These are only the example test cases, more cases are included in tests
-    directory.
+    files.
     """
     problem_num = eval(
         input("Enter a the number of a problem to solve (1 or 2): ")
