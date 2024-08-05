@@ -8,15 +8,15 @@ class ArrayProcessor:
         - Order an array according to priority (descending order) for elements
           that match a criteria.
     APPROACH:
-        - Check the length of data array and criteria inputs
+        - Check the length of data array and criteria inputs.
         - Check which items satisfy ALL criteria conditions and append them to
           top items array.
         - Append the rest of the items to last_items array.
         - Sort the items in top_items array according to priority property
-          (descending order)
+          (descending order).
     REMARKS:
-        - Array and criteria are given
-        - The array or criteria might be empty
+        - Array and criteria are given.
+        - The array or criteria might be empty.
         - You can't use python native funcs.
         - Criteria array might contain more than one condition.
           Ex. criteria2 = [('width', '=', 2), ('length', '<=', 20)]
@@ -30,7 +30,7 @@ class ArrayProcessor:
             "<=": lambda x, y: x <= y,
             ">=": lambda x, y: x >= y,
         }
-        self.valid_criteria = ["width", "height", "lenght", "weight"]
+        self.valid_criteria = ["width", "height", "length", "weight"]
 
     def _check_criteria(self, item):
         satisfies_conditions = True

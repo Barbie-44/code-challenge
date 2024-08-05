@@ -15,7 +15,7 @@ def main():
     output = None
     if problem_num == 1:
         frequency = StringFrequency(paragraph, target)
-        output = frequency.get_string_frequency()
+        output = frequency.get_result()
     if problem_num == 2:
         ordered_array = ArrayProcessor(data, [("weight", "=", 3)])
         output = ordered_array.get_sorted_array()

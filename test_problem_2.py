@@ -3,6 +3,13 @@ from problems.problem_2 import ArrayProcessor
 
 
 class TestArrayProcessor:
+    """
+    DESCRIPTION:
+        This class contains possible test cases for problem 2.
+    REMARKS:
+        - Python native functions are used to test the original approach.
+    """
+
     def __init__(self) -> None:
         self.data = data
         self.operations = {
@@ -23,7 +30,6 @@ class TestArrayProcessor:
 
     def test_base_case(self):
         criteria = [("weight", "=", 3)]
-
         frequency = 0
         for element in self.data:
             if self._get_elements_with_criteria(element, criteria):
