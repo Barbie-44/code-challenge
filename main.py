@@ -1,7 +1,7 @@
+from input import data
+from input import paragraph, target
 from problems.problem_1 import StringFrequency
 from problems.problem_2 import ArrayProcessor
-from input import paragraph, target
-from input import data
 
 
 def main():
